@@ -40,36 +40,20 @@ if(document.querySelector("#login-user-form")){
         if(firstname.length == 0 ){
             form_errors.push("Please enter first name")
         }
-
         if(lastname.length == 0 ){
             form_errors.push("Please enter last name")
         }
-
         if(username.length == 0 ){
             form_errors.push("Please enter username")
         }
-
         if(password.length == 0 ){
             form_errors.push("Please enter password")
         }
-
         if(email.length == 0 ){
             form_errors.push("Please enter email")
         }
 
         if(form_errors.length == 0){
-            //there are no errors
-
-            // client.db("db1").collection("users").insertOne({
-            //     firstname: firstname,
-            //     lastname: lastname,
-            //     email: email,
-            //     password: password,
-            //     key: 123,
-            //     is_user_verified: false
-    
-            //   })
-
 
             let user = {
                 firstname,
@@ -81,13 +65,12 @@ if(document.querySelector("#login-user-form")){
 
             }
 
+            alert("hello")
+            console.log(user)
+            alert(user)
+            alert("yaaa")
+
             TaskList.registerUser(user);
-
-
-
-
-
-
 
         }else{
             //there are errors

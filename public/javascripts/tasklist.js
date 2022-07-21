@@ -6,6 +6,7 @@ const TaskList = (function(){
     const registerUser = (user) => {
 
         // here id use axios to send it to the backend then the bakend would then put it my database
+        console.log("now in tasklist register")
 
         const sendToBack = axios.post("/register-user", user)
 

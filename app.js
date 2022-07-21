@@ -4,11 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongodb = require("mongodb");
-const dotenv = require("dotenv")
-dotenv.config();
+const dotenv = require("dotenv") 
+dotenv.config(); 
 
 const MongoClient = mongodb.MongoClient;
-const client = new MongoClient(process.env.DBURL);
+const client = new MongoClient(process.env.DBURL); 
 
 
 var indexRouter = require('./routes/index');
@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post("/login-user", async function(request, response){
   const username = request.body.username;
   const password = request.body.password;
-  const feedback = await client.db(process.env.DBNAME).collection("users").findOne({"username": username});
+  const feedback = await client.db(process.env.DBNAME).collection("users").findOne({"username": username}); 
 
   if(feedback){
     //this user exists
@@ -65,12 +65,18 @@ app.post("/login-user", async function(request, response){
 })
 
 
+
+
+
+// api endpoint for register-user
 app.post("/register-user", async function(request, response){
   const firstname = request.body.firstname;
   const lastname = request.body.lastname;
   const username = request.body.username;
   const email = request.body.email;
   const password = request.body.password;
+
+  console.log("backend receives")
 
   const userDetails = await client.db(process.env.DBNAME).collection("users").insertOne({
     firstname: firstname,
